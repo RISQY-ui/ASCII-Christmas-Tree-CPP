@@ -1,14 +1,15 @@
-# -Belajar-Nested-Loop-C---Membuat-Pohon-ASCII
 
-# 🌲 Belajar Nested Loop C++ - Membuat Pohon ASCII
+# 🌲 Learning Nested Loop C++ - Creating ASCII Christmas Tree
 
-Pendahuluan
+---
 
-Program ini menggunakan nested loop (perulangan bersarang) untuk membuat gambar pohon menggunakan karakter "*".
+# 📌 Introduction
 
-Kode:
+This program uses nested loops to create a tree shape using the "*" character.
+
+Code:
+
 ```cpp
-
 #include <iostream>
 using namespace std;
 
@@ -33,122 +34,99 @@ int main() {
     return 0;
 }
 ```
+
 ---
 
-# Cara Kerja Program
-```
-Program terdiri dari tiga bagian utama.
+🔍 How the Program Works
 
-1. Loop Luar ("i")
+The program consists of three main parts.
 
+---
+
+1. Outer Loop ("i")
+
+```cpp
 for(int i = 1; i <= 13; i++)
+```
 
-Loop ini menentukan jumlah baris daun pohon.
+This loop determines the number of tree canopy rows.
 
-Karena batas akhirnya "13", maka pohon memiliki 13 tingkat.
+Since the limit is "13", the tree has 13 levels.
 
 ---
 
-2. Loop Spasi ("s")
+2. Space Loop ("s")
 
+```cpp
 for(int s = 1; s <= 13 - i; s++)
     cout << " ";
+```
 
-Loop ini mencetak spasi di depan karakter "*".
+This loop prints spaces in front of the "*" characters.
 
-Tujuannya agar daun berada di tengah.
+The goal is to center the tree canopy.
 
-Contoh:
+Example:
 
-Ketika
+When i = 1 → 13 - 1 = 12 → Program prints 12 spaces.
 
-i = 1
+When i = 10 → 13 - 10 = 3 → Program prints only 3 spaces.
 
-Maka
-
-13 - 1 = 12
-
-Program mencetak 12 spasi.
-
-Ketika
-
-i = 10
-
-Maka
-
-13 - 10 = 3
-
-Program hanya mencetak 3 spasi.
-
-Semakin besar nilai "i", semakin sedikit spasi yang dicetak.
+The larger the value of "i", the fewer spaces are printed.
 
 ---
 
-3. Loop Daun ("j")
+3. Leaf Loop ("j")
 
+```cpp
 for(int j = 1; j <= i; j++)
     cout << "**";
+```
 
-Loop ini mencetak daun pohon.
+This loop prints the tree leaves.
 
-Mengapa menggunakan ""**""?
+Why use ""?**
 
-Supaya bentuk pohon terlihat lebih lebar dan proporsional.
+To make the tree look wider and more proportional.
 
-Contoh:
+Example:
 
-Jika
+i Value Output
+1 **
+2 ****
+5 **********
 
-i = 1
-
-Output:
-
-**
-
-Jika
-
-i = 2
-
-Output:
-
-****
-
-Jika
-
-i = 5
-
-Output:
-
-**********
-
-Semakin besar nilai "i", semakin lebar daun pohon.
+The larger the value of "i", the wider the tree canopy becomes.
 
 ---
 
-Batang Pohon
+Tree Trunk
 
-Setelah semua daun selesai dicetak, program membuat batang pohon.
+After all leaves are printed, the program creates the tree trunk.
 
+```cpp
 cout << "\t    | |" << endl;
+```
 
-Baris tersebut diulang beberapa kali sehingga batang tampak memanjang.
+This line is repeated several times so the trunk appears elongated.
 
-Outputnya seperti:
+Output:
 
+```
       | |
       | |
       | |
       | |
       | |
+```
 
 ---
 
-Bentuk Akhir
-```
+🌳 Final Shape
 
-# Program menghasilkan bentuk seperti berikut.
-```
+The program produces the following shape:
 
+```
             **
            ****
           ******
@@ -168,16 +146,62 @@ Bentuk Akhir
            | |
            | |
 ```
+
 ---
 
-# Kesimpulan
+📊 Summary
+
+Element Description
+"i" Determines the height of the tree
+"s" Determines the number of spaces to center the tree
+"j" Determines the number of leaves ("**") printed
+Spaces As "i" increases, spaces decrease
+Leaves As "i" increases, leaves increase
+Trunk Created after all leaves using multiple cout statements
+
+---
+
+💡 Learning Outcome
+
+This exercise is excellent for understanding nested loops because each loop has a different task:
+
+· One controls the height
+· One controls the position
+· One controls the width
+
+---
+
+🚀 How to Compile & Run
+
+```bash
+# Compile
+g++ -o ascii_tree ascii_tree.cpp
+
+# Run
+./ascii_tree          # Linux/Mac
+ascii_tree.exe        # Windows
 ```
 
-- "i" menentukan tinggi pohon.
-- "s" menentukan jumlah spasi agar pohon berada di tengah.
-- "j" menentukan jumlah daun ("**") yang dicetak.
-- Semakin besar nilai "i", semakin sedikit spasi dan semakin banyak daun.
-- Batang pohon dibuat setelah seluruh daun selesai dicetak menggunakan beberapa "cout".
+---
 
-«💡 Latihan ini sangat baik untuk memahami nested loop karena setiap loop memiliki tugas yang berbeda: ada yang mengatur tinggi, posisi, dan lebar gambar.»
+📌 Sample Output
 
+```
+            **
+           ****
+          ******
+         ********
+        **********
+       ************
+      **************
+     ****************
+    ******************
+   ********************
+  **********************
+ ************************
+**************************
+           | |
+           | |
+           | |
+           | |
+           | |
